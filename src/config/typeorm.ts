@@ -1,4 +1,5 @@
 import { DataSource } from "typeorm";
+import { Fighter } from "../entity/Fighter";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -6,6 +7,7 @@ export const AppDataSource = new DataSource({
     username: 'postgres',
     password: 'postgres',
     port: 5432,
-    database: 'graphql-db'
-
+    database: 'graphql-db',
+    entities:[Fighter],
+    synchronize: true
 })

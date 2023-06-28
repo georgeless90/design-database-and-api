@@ -3,6 +3,7 @@ import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 
 import { PingResolver } from "./resolvers/ping";
+import { FighterResolver } from "./resolvers/FighterResolver";
 
 export async function startServer() {
 
@@ -10,7 +11,7 @@ export async function startServer() {
 
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [PingResolver],
+      resolvers: [PingResolver, FighterResolver],
       validate: false
     }),
     context: ({ req, res }) => ({ req, res })
