@@ -1,0 +1,28 @@
+{
+  "name": "design-database-and-api",
+  "version": "1.0.0",
+  "description": "Design database and API REST",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.12.0",
+    "apollo-server-express": "^3.12.0",
+    "express": "^4.18.2",
+    "graphql": "^16.7.1",
+    "pg": "^8.11.1",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^2.0.0-beta.2",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.3.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.5"
+  }
+}
