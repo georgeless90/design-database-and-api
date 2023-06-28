@@ -5,6 +5,7 @@ import { buildSchema } from "type-graphql";
 import { FighterResolver } from "./resolvers/FighterResolver";
 import { EventResolver } from "./resolvers/EventResolver";
 
+
 export async function startServer() {
 
   const app = express();

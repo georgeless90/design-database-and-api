@@ -1,5 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, BaseEntity } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, BaseEntity, ManyToOne } from "typeorm";
 import { Field, ObjectType } from "type-graphql";
+
+import { Fight } from "./Fight";
 
 @ObjectType()
 @Entity()
@@ -54,6 +56,10 @@ export class Fighter extends BaseEntity {
     @Field()
     @Column({ nullable: true })
     submissions?: number 
+
+    @ManyToOne(() => Fight, (fight) => fight.fighters)
+    fitght: Fight
+
 
     
 }
