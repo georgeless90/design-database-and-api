@@ -5,6 +5,7 @@ import { buildSchema } from "type-graphql";
 import { FighterResolver } from "./resolvers/FighterResolver";
 import { EventResolver } from "./resolvers/EventResolver";
 import { FightResolver } from "./resolvers/FightResolver";
+import { RankingResolver } from "./resolvers/RankingResolver";
 
 export async function startServer() {
 
@@ -12,7 +13,7 @@ export async function startServer() {
 
   const server = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [FighterResolver, EventResolver, FightResolver],
+      resolvers: [FighterResolver, EventResolver, FightResolver, RankingResolver],
       validate: false
     }),
     context: ({ req, res }) => ({ req, res })

@@ -56,6 +56,7 @@ export class FighterResolver {
         const newFighter = Fighter.create({ name, lastName, age, gender, nacionality, team, weightClass })
         return await newFighter.save()
     }
+    
 
     @Mutation(() => Boolean)
     async updateFighter(
@@ -76,6 +77,11 @@ export class FighterResolver {
     @Query(() => [Fighter])
     fighters() {
         return Fighter.find()
+    }
+
+    @Query(() => Fighter)
+    getFighterStatistics(@Arg('id') id: number){
+        return Fighter.findOneBy({id})
     }
 
 
